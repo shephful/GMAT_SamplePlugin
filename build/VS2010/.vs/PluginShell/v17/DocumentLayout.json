@@ -1,64 +1,23 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Namgyu\\Documents\\SamplePlugin\\build\\VS2010\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{0FD68F32-63C6-4C17-B758-5DA12113F468}|PluginShell.vcxproj|C:\\Users\\Namgyu\\Documents\\SamplePlugin\\src\\include\\SampleDefs.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FD68F32-63C6-4C17-B758-5DA12113F468}|PluginShell.vcxproj|C:\\Users\\Namgyu\\Documents\\SamplePlugin\\src\\command\\ConsolePrint.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FD68F32-63C6-4C17-B758-5DA12113F468}|PluginShell.vcxproj|C:\\Users\\Namgyu\\Documents\\SamplePlugin\\src\\command\\ConsolePrint.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\Namgyu\\Documents\\GMAT_Workspace\\GMAT_Source\\plugins\\SamplePlugin\\build\\VS2010\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "DockedHeight": 195,
+          "SelectedChildIndex": -1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SampleDefs.hpp",
-              "DocumentMoniker": "C:\\Users\\Namgyu\\Documents\\SamplePlugin\\src\\include\\SampleDefs.hpp",
-              "RelativeDocumentMoniker": "..\\..\\src\\include\\SampleDefs.hpp",
-              "ToolTip": "C:\\Users\\Namgyu\\Documents\\SamplePlugin\\src\\include\\SampleDefs.hpp",
-              "RelativeToolTip": "..\\..\\src\\include\\SampleDefs.hpp",
-              "ViewState": "AQIAADgAAABAAAAAAAAowDkAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-17T08:21:16.06Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ConsolePrint.hpp",
-              "DocumentMoniker": "C:\\Users\\Namgyu\\Documents\\SamplePlugin\\src\\command\\ConsolePrint.hpp",
-              "RelativeDocumentMoniker": "..\\..\\src\\command\\ConsolePrint.hpp",
-              "ToolTip": "C:\\Users\\Namgyu\\Documents\\SamplePlugin\\src\\command\\ConsolePrint.hpp",
-              "RelativeToolTip": "..\\..\\src\\command\\ConsolePrint.hpp",
-              "ViewState": "AQIAABEAAAAgAAAAAAAmwBUAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-17T08:17:37.927Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ConsolePrint.cpp",
-              "DocumentMoniker": "C:\\Users\\Namgyu\\Documents\\SamplePlugin\\src\\command\\ConsolePrint.cpp",
-              "RelativeDocumentMoniker": "..\\..\\src\\command\\ConsolePrint.cpp",
-              "ToolTip": "C:\\Users\\Namgyu\\Documents\\SamplePlugin\\src\\command\\ConsolePrint.cpp",
-              "RelativeToolTip": "..\\..\\src\\command\\ConsolePrint.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvw8AAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-17T08:17:36.645Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

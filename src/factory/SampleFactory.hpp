@@ -75,8 +75,8 @@ public:
    //                                          const std::string &fileName = "");
    //virtual EphemerisFile*   CreateEphemerisFile(const std::string &ofType,
    //                                             const std::string &withName = "");
-   //virtual GmatCommand*     CreateCommand(const std::string &ofType,
-   //                                       const std::string &withName = "");
+   virtual GmatCommand*     CreateCommand(const std::string &ofType,
+                                          const std::string &withName = "");
    //virtual AtmosphereModel* CreateAtmosphereModel(const std::string &ofType,
    //                                               const std::string &withName = "",
    //                                               const std::string &forBody = "Earth");

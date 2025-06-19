@@ -5,9 +5,17 @@
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -16,6 +24,7 @@
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>SolarSail</RootNamespace>
     <ProjectName>GmatPluginShell</ProjectName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -23,6 +32,14 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <CLRSupport>false</CLRSupport>
     <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
@@ -34,13 +51,27 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
@@ -48,13 +79,23 @@
     <LinkIncremental>true</LinkIncremental>
     <IgnoreImportLibrary>false</IgnoreImportLibrary>
     <TargetName>libSamplePlugin</TargetName>
-    <OutDir>$(SolutionDir)..\..\..\..\GmatDevelopment\application\plugins\</OutDir>
+    <OutDir>$(SolutionDir)..\..\..\..\application\plugins\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+    <TargetName>libSamplePlugin</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IgnoreImportLibrary>false</IgnoreImportLibrary>
-    <OutDir>$(SolutionDir)..\..\..\..\GmatDevelopment\application\plugins\</OutDir>
+    <OutDir>$(SolutionDir)..\..\..\..\application\plugins\</OutDir>
     <TargetName>libSamplePlugin</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>libSamplePlugin</TargetName>
+    <LinkIncremental>false</LinkIncremental>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -62,7 +103,7 @@
       <Optimization>MaxSpeed</Optimization>
       <PreprocessorDefinitions>_MBCS;SAMPLE_EXPORTS;_DYNAMICLINK;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>..\..\src\include;..\..\src\factory;..\..\src\plugin;..\..\..\..\GmatDevelopment\src\base\asset;..\..\..\..\GmatDevelopment\src\base\attitude;..\..\..\..\GmatDevelopment\src\base\burn;..\..\..\..\GmatDevelopment\src\base\command;..\..\..\..\GmatDevelopment\src\base\configs;..\..\..\..\GmatDevelopment\src\base\coordsystem;..\..\..\..\GmatDevelopment\src\base\event;..\..\..\..\GmatDevelopment\src\base\executive;..\..\..\..\GmatDevelopment\src\base\factory;..\..\..\..\GmatDevelopment\src\base\forcemodel;..\..\..\..\GmatDevelopment\src\base\foundation;..\..\..\..\GmatDevelopment\src\base\function;..\..\..\..\GmatDevelopment\src\base\hardware;..\..\..\..\GmatDevelopment\src\base\include;..\..\..\..\GmatDevelopment\src\base\interface;..\..\..\..\GmatDevelopment\src\base\interpolator;..\..\..\..\GmatDevelopment\src\base\interpreter;..\..\..\..\GmatDevelopment\src\base\math;..\..\..\..\GmatDevelopment\src\base\parameter;..\..\..\..\GmatDevelopment\src\base\plugin;..\..\..\..\GmatDevelopment\src\base\propagator;..\..\..\..\GmatDevelopment\src\base\solarsys;..\..\..\..\GmatDevelopment\src\base\solver;..\..\..\..\GmatDevelopment\src\base\spacecraft;..\..\..\..\GmatDevelopment\src\base\stopcond;..\..\..\..\GmatDevelopment\src\base\subscriber;..\..\..\..\GmatDevelopment\src\base\util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\src\include;..\..\src\command;..\..\src\factory;..\..\src\plugin;..\..\..\..\src\base\asset;..\..\..\..\src\base\attitude;..\..\..\..\src\base\burn;..\..\..\..\src\base\command;..\..\..\..\src\base\configs;..\..\..\..\src\base\coordsystem;..\..\..\..\src\base\event;..\..\..\..\src\base\executive;..\..\..\..\src\base\factory;..\..\..\..\src\base\forcemodel;..\..\..\..\src\base\foundation;..\..\..\..\src\base\function;..\..\..\..\src\base\hardware;..\..\..\..\src\base\include;..\..\..\..\src\base\interface;..\..\..\..\src\base\interpolator;..\..\..\..\src\base\interpreter;..\..\..\..\src\base\math;..\..\..\..\src\base\parameter;..\..\..\..\src\base\plugin;..\..\..\..\src\base\propagator;..\..\..\..\src\base\solarsys;..\..\..\..\src\base\spice;..\..\..\..\src\base\solver;..\..\..\..\src\base\spacecraft;..\..\..\..\src\base\stopcond;..\..\..\..\src\base\subscriber;..\..\..\..\src\gmatutil\include;..\..\..\..\src\gmatutil\util;..\..\..\..\src\base\factory\guicomponents;..\..\..\..\depends\cspice\windows\cspice64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
@@ -73,11 +114,12 @@
       <DisableSpecificWarnings>4231;4251;4996</DisableSpecificWarnings>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalDependencies>libGmatBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\..\..\GmatDevelopment\application\bin</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\build\win64-cmakebuild\src\base\Release;..\..\..\..\GMAT-R2025a-Windows-x64\bin</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -85,6 +127,42 @@
       </FixedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_MBCS;SAMPLE_EXPORTS;_DYNAMICLINK;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>..\..\src\include;..\..\src\command;..\..\src\factory;..\..\src\plugin;..\..\..\..\src\base\asset;..\..\..\..\src\base\attitude;..\..\..\..\src\base\burn;..\..\..\..\src\base\command;..\..\..\..\src\base\configs;..\..\..\..\src\base\coordsystem;..\..\..\..\src\base\event;..\..\..\..\src\base\executive;..\..\..\..\src\base\factory;..\..\..\..\src\base\forcemodel;..\..\..\..\src\base\foundation;..\..\..\..\src\base\function;..\..\..\..\src\base\hardware;..\..\..\..\src\base\include;..\..\..\..\src\base\interface;..\..\..\..\src\base\interpolator;..\..\..\..\src\base\interpreter;..\..\..\..\src\base\math;..\..\..\..\src\base\parameter;..\..\..\..\src\base\plugin;..\..\..\..\src\base\propagator;..\..\..\..\src\base\solarsys;..\..\..\..\src\base\spice;..\..\..\..\src\base\solver;..\..\..\..\src\base\spacecraft;..\..\..\..\src\base\stopcond;..\..\..\..\src\base\subscriber;..\..\..\..\src\gmatutil\include;..\..\..\..\src\gmatutil\util;..\..\..\..\src\base\factory\guicomponents;..\..\..\..\depends\cspice\windows\cspice64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAsManaged>false</CompileAsManaged>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <CallingConvention>Cdecl</CallingConvention>
+      <DisableSpecificWarnings>4231;4251;4996</DisableSpecificWarnings>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>GmatBase.lib;GmatUtil.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\build\win64-cmakebuild\src\base\Release;..\..\..\..\build\win64-cmakebuild\src\gmatutil\Release;..\..\..\..\GMAT-R2025a-Windows-x64\bin</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <FixedBaseAddress>
+      </FixedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -92,7 +170,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_MBCS;SAMPLE_EXPORTS;_DYNAMICLINK;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>..\..\src\include;..\..\src\factory;..\..\src\plugin;..\..\..\..\GmatDevelopment\src\base\asset;..\..\..\..\GmatDevelopment\src\base\attitude;..\..\..\..\GmatDevelopment\src\base\burn;..\..\..\..\GmatDevelopment\src\base\command;..\..\..\..\GmatDevelopment\src\base\configs;..\..\..\..\GmatDevelopment\src\base\coordsystem;..\..\..\..\GmatDevelopment\src\base\event;..\..\..\..\GmatDevelopment\src\base\executive;..\..\..\..\GmatDevelopment\src\base\factory;..\..\..\..\GmatDevelopment\src\base\forcemodel;..\..\..\..\GmatDevelopment\src\base\foundation;..\..\..\..\GmatDevelopment\src\base\function;..\..\..\..\GmatDevelopment\src\base\hardware;..\..\..\..\GmatDevelopment\src\base\include;..\..\..\..\GmatDevelopment\src\base\interface;..\..\..\..\GmatDevelopment\src\base\interpolator;..\..\..\..\GmatDevelopment\src\base\interpreter;..\..\..\..\GmatDevelopment\src\base\math;..\..\..\..\GmatDevelopment\src\base\parameter;..\..\..\..\GmatDevelopment\src\base\plugin;..\..\..\..\GmatDevelopment\src\base\propagator;..\..\..\..\GmatDevelopment\src\base\solarsys;..\..\..\..\GmatDevelopment\src\base\solver;..\..\..\..\GmatDevelopment\src\base\spacecraft;..\..\..\..\GmatDevelopment\src\base\stopcond;..\..\..\..\GmatDevelopment\src\base\subscriber;..\..\..\..\GmatDevelopment\src\base\util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\src\include;..\..\src\command;..\..\src\factory;..\..\src\plugin;..\..\..\..\src\base\asset;..\..\..\..\src\base\attitude;..\..\..\..\src\base\burn;..\..\..\..\src\base\command;..\..\..\..\src\base\configs;..\..\..\..\src\base\coordsystem;..\..\..\..\src\base\event;..\..\..\..\src\base\executive;..\..\..\..\src\base\factory;..\..\..\..\src\base\forcemodel;..\..\..\..\src\base\foundation;..\..\..\..\src\base\function;..\..\..\..\src\base\hardware;..\..\..\..\src\base\include;..\..\..\..\src\base\interface;..\..\..\..\src\base\interpolator;..\..\..\..\src\base\interpreter;..\..\..\..\src\base\math;..\..\..\..\src\base\parameter;..\..\..\..\src\base\plugin;..\..\..\..\src\base\propagator;..\..\..\..\src\base\solarsys;..\..\..\..\src\base\spice;..\..\..\..\src\base\solver;..\..\..\..\src\base\spacecraft;..\..\..\..\src\base\stopcond;..\..\..\..\src\base\subscriber;..\..\..\..\src\gmatutil\include;..\..\..\..\src\gmatutil\util;..\..\..\..\src\base\factory\guicomponents;..\..\..\..\depends\cspice\windows\cspice64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -102,11 +180,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <CallingConvention>Cdecl</CallingConvention>
       <DisableSpecificWarnings>4231;4251;4996</DisableSpecificWarnings>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalDependencies>libGmatBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\..\..\GmatDevelopment\application\bin</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\build\win64-cmakebuild\src\base\Release;..\..\..\..\GMAT-R2025a-Windows-x64\bin</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -114,6 +193,40 @@
       </FixedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_MBCS;SAMPLE_EXPORTS;_DYNAMICLINK;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>..\..\src\include;..\..\src\command;..\..\src\factory;..\..\src\plugin;..\..\..\..\src\base\asset;..\..\..\..\src\base\attitude;..\..\..\..\src\base\burn;..\..\..\..\src\base\command;..\..\..\..\src\base\configs;..\..\..\..\src\base\coordsystem;..\..\..\..\src\base\event;..\..\..\..\src\base\executive;..\..\..\..\src\base\factory;..\..\..\..\src\base\forcemodel;..\..\..\..\src\base\foundation;..\..\..\..\src\base\function;..\..\..\..\src\base\hardware;..\..\..\..\src\base\include;..\..\..\..\src\base\interface;..\..\..\..\src\base\interpolator;..\..\..\..\src\base\interpreter;..\..\..\..\src\base\math;..\..\..\..\src\base\parameter;..\..\..\..\src\base\plugin;..\..\..\..\src\base\propagator;..\..\..\..\src\base\solarsys;..\..\..\..\src\base\spice;..\..\..\..\src\base\solver;..\..\..\..\src\base\spacecraft;..\..\..\..\src\base\stopcond;..\..\..\..\src\base\subscriber;..\..\..\..\src\gmatutil\include;..\..\..\..\src\gmatutil\util;..\..\..\..\src\base\factory\guicomponents;..\..\..\..\depends\cspice\windows\cspice64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAsManaged>false</CompileAsManaged>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <CallingConvention>Cdecl</CallingConvention>
+      <DisableSpecificWarnings>4231;4251;4996</DisableSpecificWarnings>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>GmatBase.lib;GmatUtil.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\build\win64-cmakebuild\src\base\Release;..\..\..\..\build\win64-cmakebuild\src\gmatutil\Release;..\..\..\..\GMAT-R2025a-Windows-x64\bin</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <FixedBaseAddress>
+      </FixedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

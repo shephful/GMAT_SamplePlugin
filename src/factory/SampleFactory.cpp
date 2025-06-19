@@ -23,7 +23,7 @@
 
 // Here you add include statements for each class that can be instantiated in
 // this factory.  The example here is a SampleClass object.
-#include "SampleClass.hpp"
+#include "ConsolePrint.hpp"
 
 //------------------------------------------------------------------------------
 // SampleFactory()
@@ -42,7 +42,7 @@ SampleFactory::SampleFactory() :
    {
       // Replace the SampleClass string here with your class name.  For multiple 
       // classes of the same core type, push back multiple names here
-      creatables.push_back("SampleClass");
+      creatables.push_back("ConsolePrint");
    }
 }
 
@@ -75,7 +75,7 @@ SampleFactory::SampleFactory(const SampleFactory& elf) :
    {
       // Replace the SampleClass string here with your class name.  For multiple 
       // classes of the same type, push back multiple names here
-      creatables.push_back("SampleClass");
+      creatables.push_back("ConsolePrint");
    }
 }
 
@@ -102,7 +102,7 @@ SampleFactory& SampleFactory::operator=(
       {
          // Replace the SampleClass string here with your class name.  For multiple 
          // classes of the same type, push back multiple names here
-         creatables.push_back("SampleClass");
+         creatables.push_back("ConsolePrint");
       }
    }
 
@@ -126,13 +126,13 @@ SampleFactory& SampleFactory::operator=(
 // *         the requested type)
 // */
 ////------------------------------------------------------------------------------
-//GmatCommand* SampleFactory::CreateCommand(const std::string &ofType,
-//                                     const std::string &withName)
-//{
-//   // This is how you'd implement creation of a ConsolePrint command 
-//   if (ofType == "ConsolePrint")
-//      return new ConsolePrint();
-//   // add more here .......
-//
-//   return NULL;   // doesn't match any type of Command known by this factory
-//}
+GmatCommand* SampleFactory::CreateCommand(const std::string &ofType,
+                                     const std::string &withName)
+{
+   // This is how you'd implement creation of a ConsolePrint command 
+   if (ofType == "ConsolePrint")
+      return new ConsolePrint();
+   // add more here .......
+
+   return NULL;   // doesn't match any type of Command known by this factory
+}
